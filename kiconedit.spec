@@ -1,8 +1,8 @@
 Summary:	KDE Icon Editor
 Name:		kiconedit
-Version: 	4.1.1
+Version: 	4.1.2
 Release: 	%mkrel 1
-Source0: 	http://fr2.rpmfind.net/linux/KDE/stable/4.1.0/src/extragear/%name-%version.tar.bz2
+Source0: 	http://fr2.rpmfind.net/linux/KDE/stable/%version/src/extragear/%name-%version.tar.bz2
 License: 	GPLv2+
 Group: 		Graphics
 Url: 		http://www.kde.org
