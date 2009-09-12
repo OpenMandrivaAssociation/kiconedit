@@ -8,19 +8,16 @@ Group: 		Graphics
 Url: 		http://www.kde.org
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: 	kdelibs4-devel
+%if %mdkversion < 200900
 Obsoletes: 	kdegraphics-kiconedit < 1:3.5.10-3
 Conflicts:	kde-l10n < 3.5.9-5
+%endif
+%if %mdkversion < 200900
+Obsoletes:  kdegraphics3-kiconedit < 1:3.5.10-5
+%endif
 
 %description 
 KDE Icon Editor.
-
-%if %mdkversion < 200900
-%post
-%update_menus
-
-%postun
-%update_menus
-%endif
 
 %files -f %name.lang
 %defattr(-,root,root)
