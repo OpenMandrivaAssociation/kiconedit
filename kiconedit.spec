@@ -5,7 +5,7 @@ Release: 	%mkrel 1
 Source0: 	http://fr2.rpmfind.net/linux/KDE/stable/%version/src/extragear/%name-%version.tar.bz2
 License: 	GPLv2+
 Group: 		Graphics
-Url: 		http://www.kde.org
+Url: 		http://userbase.kde.org/KIconEdit
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: 	kdelibs4-devel
 %if %mdkversion < 200900
