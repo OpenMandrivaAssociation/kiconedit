@@ -1,12 +1,11 @@
 Summary:	KDE Icon Editor
 Name:		kiconedit
 Version: 	4.4.0
-Release: 	%mkrel 2
+Release: 	1
 Source0: 	http://fr2.rpmfind.net/linux/KDE/stable/%version/src/extragear/%name-%version.tar.bz2
 License: 	GPLv2+
 Group: 		Graphics
-Url: 		http://userbase.kde.org/KIconEdit
-BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+Url: 		http://www.kde.org
 BuildRequires: 	kdelibs4-devel
 %if %mdkversion < 200900
 Obsoletes: 	kdegraphics-kiconedit < 1:3.5.10-3
@@ -20,7 +19,7 @@ Obsoletes:  kdegraphics3-kiconedit < 1:3.5.10-5
 KDE Icon Editor.
 
 %files -f %name.lang
-%defattr(-,root,root)
+%doc AUTHORS COPYING COPYING.DOC NEWS
 %_kde_bindir/*
 %_kde_datadir/applications/kde4/*.desktop
 %_kde_appsdir/%name
@@ -30,18 +29,18 @@ KDE Icon Editor.
 
 %prep
 %setup -q
-
+sed -i -e 's#<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4\.1\.2-Based Variant V1\.1//EN" "dtd/kdex\.dtd" \[#<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [#g' doc-translations/*_kiconedit/*/index.docbook
+    
 %build
 %cmake_kde4
 %make
 
 %install
-rm -rf %{buildroot}
 cd build
 %{makeinstall_std}
 cd -
 
 %find_lang %name --with-html
 
-%clean
-rm -rf %{buildroot}
+
+
