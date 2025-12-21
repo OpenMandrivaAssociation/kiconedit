@@ -6,6 +6,7 @@ Source0: 	http://fr2.rpmfind.net/linux/KDE/stable/%version/src/extragear/%name-%
 License: 	GPLv2+
 Group: 		Graphics
 Url: 		https://www.kde.org
+BuildRequires:	make
 BuildRequires: 	kdelibs4-devel
 %if %mdkversion < 200900
 Obsoletes: 	kdegraphics-kiconedit < 1:3.5.10-3
